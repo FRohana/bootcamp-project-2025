@@ -1,0 +1,23 @@
+{
+  "name": "frohana.github.io",
+  "version": "1.0.0",
+  "description": "This is a personal website built using the Hack4Impact Starter Pack!\r <A personal website showcasing my projects, interests, and experiences.>\r [Visit it Here!](https://FRohana.github.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FRohana/FRohana.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FRohana/FRohana.github.io/issues"
+  },
+  "homepage": "https://github.com/FRohana/FRohana.github.io#readme",
+  "dependencies": {
+    "typescript": "^5.9.3"
+  }
+}
