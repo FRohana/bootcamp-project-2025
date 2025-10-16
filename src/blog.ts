@@ -18,7 +18,7 @@ const MyBlogs = [
     date: "10-14-2025",
     description:
       "Through Hack4Impact's bootcamp, I learned web development from the ground up starting with HTML structure...",
-    image: "websiteSS.png",
+    image: "images/websiteSS.png",
     imageAlt: "Screenshot of my portfolio website homepage",
     slug: "how-i-built-my-website.html",
   },
@@ -27,12 +27,12 @@ const MyBlogs = [
     date: "10-14-2025",
     description:
       "My journey into computer engineering started in seventh grade when I built my first custom PC...",
-    image: "fullgame.jpg",
+    image: "images/fullgame.jpg",
     imageAlt:
       "Completed whack-a-mole arcade game with wooden cabinet and button controls",
     additionalImages: [
       {
-        src: "wires.jpg",
+        src: "images/wires.jpg",
         alt: "Inside view of the arcade game showing Arduino microcontroller, breadboard, and circuit wiring",
         caption:
           "The hardware side: designing and wiring the circuit board with an Arduino to control the game logic and button inputs",

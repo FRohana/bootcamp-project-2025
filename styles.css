@@ -667,6 +667,10 @@ form#contact-form input[type="submit"]:active {
   margin-bottom: 10px;
 }
 
+.image-row img:only-child {
+  width: 100%;
+}
+
 /* Makes images larger on individual/sub blog post pages, used ai*/
 main .blog-post-container > img:not(.image-row img) {
   width: 100% !important;
