@@ -1,5 +1,4 @@
 import Infocard from "@/components/Infocard";
-import style from "@/components/infocard.module.css";
 
 
 export default function Home() {
