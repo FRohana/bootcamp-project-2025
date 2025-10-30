@@ -1,19 +1,24 @@
-export default function Blog() {
-  return (
-    <>
-      <head>
-        <title>My Blog</title>
-        <link rel="stylesheet" href="styles.css" />
-      </head>
-      <body>
-        <main>
-          <h1 className="page-title">My Blog</h1>
-          <div id="blog-container"></div>
-        </main>
-        <footer className="footer">© 2025 | ALL RIGHTS RESERVED</footer>
+import Blog from "@/components/Blogs";
+import blogs from "@/app/blogData";
 
-        <script src="src/blog.js"></script>
-      </body>
-    </>
+export default function BlogPage() {
+  return (
+    <main>
+      <h1 className="page-title">My Blog</h1>
+      <div id="blog-container">
+        {blogs.map((blog) => (
+          <Blog
+            key={blog.slug}
+            title={blog.title}
+            date={blog.date}
+            description={blog.description}
+            image={blog.image}
+            imageAlt={blog.imageAlt}
+            slug={blog.slug}
+            additionalImages={blog.additionalImages}
+          />
+        ))}
+      </div>
+    </main>
   );
 }
