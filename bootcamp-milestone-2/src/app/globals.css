@@ -13,26 +13,12 @@ body {
   padding: 0;
   font-family: "Share Tech Mono", "Consolas", monospace;
   color: #e0eafc;
-  padding: 0 0 80px 0; /* Add bottom padding */
-}
-
-html {
-  min-height: 100%;
-  background: linear-gradient(165deg, #232526 0%, #0f2027 100%) no-repeat;
-  background-size: 100% 100%;
-}
-
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Share Tech Mono", "Consolas", monospace;
-  color: #e0eafc;
+  padding: 0 0 80px 0;
 }
 
 /* Main Content */
 main {
-  padding: 40px 0px 100px 0px;
+  padding: 40px 0px 100px 00px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +28,7 @@ main {
   margin: 40px auto 80px auto;
   max-width: 1400px;
   box-shadow: 0 0px 2px #00ffea22;
+
 }
 
 .page-title {
@@ -159,7 +146,6 @@ main a[download]:hover {
     font-size: 2rem;
   }
 }
-
 .form-container {
   display: flex;
   justify-content: center;
@@ -319,7 +305,7 @@ form#contact-form input[type="submit"]:active {
 }
 
 .blog-post-container {
-  width: 100%;
+  width: 93%;
   background: rgba(15, 32, 39, 0.9);
   border: 2px solid #00ffea;
   border-radius: 16px;
@@ -382,6 +368,7 @@ form#contact-form input[type="submit"]:active {
   display: block;
   margin-bottom: 10px;
 }
+
 .image-caption {
   font-family: "Share Tech Mono", monospace;
   font-size: 0.95rem;
@@ -412,7 +399,7 @@ form#contact-form input[type="submit"]:active {
   width: 100%;
 }
 
-/* Makes images larger on individual/sub blog post pages, used ai*/
+/* Makes images larger on individual/sub blog post pages */
 main .blog-post-container > img:not(.image-row img) {
   width: 100% !important;
   max-width: none !important;
