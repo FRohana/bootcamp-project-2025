@@ -1,4 +1,4 @@
-import Blog from "@/components/Blogs";
+import Blogs from "@/components/Blogs";
 import blogs from "@/app/blogData";
 
 export default function BlogPage() {
@@ -7,7 +7,7 @@ export default function BlogPage() {
       <h1 className="page-title">My Blog</h1>
       <div id="blog-container">
         {blogs.map((blog) => (
-          <Blog
+          <Blogs
             key={blog.slug}
             title={blog.title}
             date={blog.date}
