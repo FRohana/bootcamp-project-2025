@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #232526 0%, #006b6b 50%, #232526 100%);
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 -2px 8px #00ffea44;
+  font-family: "Orbitron", monospace;
+  text-transform: uppercase;
+}
