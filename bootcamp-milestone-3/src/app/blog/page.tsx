@@ -1,7 +1,28 @@
 import Blogs from "@/components/Blogs";
-import blogs from "@/app/blogData";
+import connectDB from "@/database/db";
+import Blog from "@/database/blogSchema";
 
-export default function BlogPage() {
+async function getBlogs() {
+  await connectDB();
+  try {
+    const blogs = await Blog.find().sort({ date: -1 }).orFail();
+    return blogs;
+  } catch (err) {
+    return null;
+  }
+}
+
+export default async function BlogPage() {
+  const blogs = await getBlogs();
+  if (!blogs || blogs.length === 0) {
+    return (
+      <main>
+        <h1 className="page-title">My Blog</h1>
+        <p>No blogs found.</p>
+      </main>
+    );
+  }
+  
   return (
     <main>
       <h1 className="page-title">My Blog</h1>

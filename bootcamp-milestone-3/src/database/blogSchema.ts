@@ -1,0 +1,37 @@
+import mongoose, { Schema } from "mongoose";
+
+// typescript type matching my Blog interface
+type Blog = {
+    title: string;
+    date: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+    slug: string;
+    additionalImages?: Array<{
+        src: string;
+        alt: string;
+        caption: string;
+    }>;
+};
+
+// mongoose schema
+const blogSchema = new Schema<Blog>({
+    title: { type: String, required: true },
+    date: { type: String, required: true },
+    description: { type: String, required: true },
+    image: { type: String, required: true },
+    imageAlt: { type: String, required: true },
+    slug: { type: String, required: true },
+    additionalImages: [{
+        src: { type: String, required: false },
+        alt: { type: String, required: false },
+        caption: { type: String, required: false }
+    }]
+})
+
+// defining the collection and model
+const Blog = mongoose.models['blogs'] || 
+    mongoose.model('blogs', blogSchema);
+
+export default Blog;
