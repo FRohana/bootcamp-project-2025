@@ -5,6 +5,7 @@ type Blog = {
     title: string;
     date: string;
     description: string;
+    content?: string;
     image: string;
     imageAlt: string;
     slug: string;
@@ -20,6 +21,7 @@ const blogSchema = new Schema<Blog>({
     title: { type: String, required: true },
     date: { type: String, required: true },
     description: { type: String, required: true },
+    content: { type: String, required: false },
     image: { type: String, required: true },
     imageAlt: { type: String, required: true },
     slug: { type: String, required: true },
