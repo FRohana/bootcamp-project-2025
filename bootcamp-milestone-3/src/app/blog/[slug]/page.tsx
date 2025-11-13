@@ -8,12 +8,27 @@ type Props = {
   }>;
 };
 
-async function getBlog(slug: string) {
+type BlogPost = {
+  title: string;
+  date: string;
+  description: string;
+  content?: string;
+  image: string;
+  imageAlt: string;
+  slug: string;
+  additionalImages?: Array<{
+    src: string;
+    alt: string;
+    caption: string;
+  }>;
+};
+
+async function getBlog(slug: string): Promise<BlogPost | null> {
   await connectDB();
 
   try {
-    const blog = await Blog.findOne({ slug }).orFail();
-    return blog;
+    const blog = await Blog.findOne({ slug }).lean().orFail();
+    return blog as unknown as BlogPost;
   } catch (err) {
     return null;
   }

@@ -1,33 +1,51 @@
 import Project from "@/components/Project";
+import connectDB from "@/database/db";
+import ProjectModel from "@/database/projectSchema";
 
-export default function Portfolio() {
+type ProjectData = {
+  name: string;
+  description: string;
+  imageUrl: string;
+  projectUrl: string;
+  linkText?: string;
+};
+
+async function getProjects(): Promise<ProjectData[] | null> {
+  await connectDB();
+  try {
+    const projects = await ProjectModel.find().lean().orFail();
+    return projects as unknown as ProjectData[];
+  } catch (err) {
+    return null;
+  }
+}
+
+export default async function Portfolio() {
+  const projects = await getProjects();
+
+  if (!projects || projects.length === 0) {
+    return (
+      <main>
+        <h1 className="page-title">My Portfolio</h1>
+        <p>No projects found.</p>
+      </main>
+    );
+  }
+
   return (
     <main>
       <h1 className="page-title">My Portfolio</h1>
 
-      <Project
-        name="Personal Website"
-        description="A showcase of my work, blog posts, resume, and contact information. Explore my projects and learn more about me."
-        imageUrl="/images/website.png"
-        projectUrl="/"
-        linkText="Learn More"
-      />
-
-      <Project
-        name="PyPaint"
-        description="Coded a digital painting app in Python with Pygame. Features palette, brush sizes, reset canvas, and intuitive drawing interface."
-        imageUrl="/images/pypaint2.png"
-        projectUrl="https://github.com/FRohana/PyPaint"
-        linkText="Learn More"
-      />
-
-      <Project
-        name="CPUandBeyond"
-        description="Designed website and course explaining computer hardware concepts (CPUs, hard drives, power supplies) with interactive quizzes to test understanding."
-        imageUrl="/images/cpuandbeyond.png"
-        projectUrl="https://faridrohana0.wixsite.com/cpuandbeyond"
-        linkText="View Website"
-      />
+      {projects.map((project, index) => (
+        <Project
+          key={index}
+          name={project.name}
+          description={project.description}
+          imageUrl={project.imageUrl}
+          projectUrl={project.projectUrl}
+          linkText={project.linkText}
+        />
+      ))}
     </main>
   );
 }
