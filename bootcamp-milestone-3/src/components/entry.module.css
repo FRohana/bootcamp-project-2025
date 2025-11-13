@@ -1,0 +1,30 @@
+.entry {
+  background: rgba(44, 62, 80, 0.8);
+  border-radius: 10px;
+  padding: 18px 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px #00ffea22;
+}
+
+.entrytitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #00ffea;
+  margin-bottom: 6px;
+  font-family: "Orbitron", monospace;
+  text-transform: uppercase;
+}
+
+.entryinfo {
+  font-size: 1rem;
+  color: #b2ebf2;
+  margin-bottom: 6px;
+  font-family: "Share Tech Mono", monospace;
+}
+
+.entrydescription {
+  font-size: 1rem;
+  color: #e0eafc;
+  margin-bottom: 6px;
+  font-family: "Share Tech Mono", monospace;
+}
