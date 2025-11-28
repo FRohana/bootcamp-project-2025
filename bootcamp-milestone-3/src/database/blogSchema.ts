@@ -1,6 +1,12 @@
 import mongoose, { Schema } from "mongoose";
 
 // typescript type matching my Blog interface
+type IComment = {
+    user: string;
+    comment: string;
+    time: Date;
+}
+
 type Blog = {
     title: string;
     date: string;
@@ -14,6 +20,7 @@ type Blog = {
         alt: string;
         caption: string;
     }>;
+    comments?: IComment[];
 };
 
 // mongoose schema
@@ -29,6 +36,11 @@ const blogSchema = new Schema<Blog>({
         src: { type: String, required: false },
         alt: { type: String, required: false },
         caption: { type: String, required: false }
+    }],
+    comments: [{
+        user: { type: String, required: true },
+        comment: { type: String, required: true },
+        time: { type: Date, required: true }
     }]
 })
 

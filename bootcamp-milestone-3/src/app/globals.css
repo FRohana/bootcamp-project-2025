@@ -411,6 +411,212 @@ main .blog-post-container > img:not(.image-row img) {
   display: block;
 }
 
+/* Blog Layout with Sidebar */
+.blog-layout {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Comments Sidebar */
+.comments-sidebar {
+  width: 300px;
+  min-width: 300px;
+  background: rgba(15, 32, 39, 0.9);
+  border: 2px solid #00ffea;
+  border-radius: 16px;
+  padding: 25px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.comments-title {
+  font-family: "Orbitron", monospace;
+  font-size: 1.3rem;
+  color: #00ffea;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #00ffea;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.no-comments {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.95rem;
+  color: #b2ebf2;
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Comment styling */
+.comment-container {
+  background: rgba(35, 37, 38, 0.7);
+  border: 1px solid #00ffea;
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.comment-container:hover {
+  border-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 255, 234, 0.3);
+  transform: translateX(3px);
+}
+
+.comment-user {
+  font-family: "Orbitron", monospace;
+  font-size: 1rem;
+  color: #00ffea;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comment-text {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.9rem;
+  color: #e0eafc;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.comment-time {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.85rem;
+  color: #b2ebf2;
+  font-style: italic;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Comment Form Styling */
+.comment-form {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid #00ffea;
+}
+
+.comment-form-title {
+  font-family: "Orbitron", monospace;
+  font-size: 1.1rem;
+  color: #00ffea;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comment-form label {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.9rem;
+  color: #b2ebf2;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.comment-form input,
+.comment-form textarea {
+  background: #1a2a32;
+  color: #e0eafc;
+  border: 2px solid #00ffea;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  transition: border 0.3s, box-shadow 0.3s;
+  font-family: "Share Tech Mono", monospace;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.comment-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+  border-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 255, 234, 0.4);
+  outline: none;
+  background: #232d35;
+}
+
+.comment-submit-btn {
+  background: linear-gradient(90deg, #00ffea 0%, #0072ff 100%);
+  color: #232526;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Orbitron", monospace;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.comment-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #0072ff 0%, #00ffea 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 234, 0.3);
+}
+
+.comment-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.comment-message {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.85rem;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.comment-message.success {
+  background: rgba(0, 255, 234, 0.2);
+  color: #00ffea;
+  border: 1px solid #00ffea;
+}
+
+.comment-message.error {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+/* Responsive: Stack on smaller screens */
+@media (max-width: 900px) {
+  .blog-layout {
+    flex-direction: column;
+  }
+
+  .comments-sidebar {
+    width: 100%;
+    min-width: auto;
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+}
+
 /* For buttons */
 .readmore-button {
   display: inline-block;
