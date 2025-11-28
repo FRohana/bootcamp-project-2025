@@ -19,7 +19,7 @@
   "homepage": "https://github.com/FRohana/FRohana.github.io#readme",
   "dependencies": {
     "mongodb": "^7.0.0",
-    "mongoose": "^8.19.3",
+    "mongoose": "^8.20.1",
     "typescript": "^5.9.3"
   }
 }

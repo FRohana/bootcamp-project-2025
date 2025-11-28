@@ -1,7 +1,7 @@
 // db.ts
 import mongoose from "mongoose";
 
-const url: string = process.env.MONGO_URI as string;
+const url: string | undefined = process.env.MONGO_URI;
 let connection: typeof mongoose;
 
 /**
@@ -10,6 +10,12 @@ let connection: typeof mongoose;
  * @returns {Promise<typeof mongoose>}
  */
 const connectDB = async () => {
+  if (!url) {
+    throw new Error(
+      "MongoDB connection string is missing. Please set MONGO_URI in your .env.local file."
+    );
+  }
+  
   if (!connection) {
     connection = await mongoose.connect(url);
     return connection;
