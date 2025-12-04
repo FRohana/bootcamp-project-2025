@@ -37,12 +37,21 @@ export default function CommentForm({ slug }: CommentFormProps) {
       });
 
       console.log("Response status:", response.status);
+      
+      if (!response.ok) {
+        let errorMessage = "Failed to submit comment";
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorData.details || errorMessage;
+        } catch (parseError) {
+          // If response isn't JSON, use status text
+          errorMessage = response.statusText || errorMessage;
+        }
+        throw new Error(errorMessage);
+      }
+
       const responseData = await response.json();
       console.log("Response data:", responseData);
-
-      if (!response.ok) {
-        throw new Error(responseData.error || "Failed to submit comment");
-      }
 
       setMessage({ type: "success", text: "Comment submitted successfully!" });
       setUser("");

@@ -4,15 +4,10 @@ type IComment = {
   time: Date | string;
 };
 
-{
- 
-}
 type CommentProps = {
   comment: IComment;
 };
 
-{
-}
 function parseCommentTime(time: Date | string) {
   const date = typeof time === "string" ? new Date(time) : new Date(time);
 

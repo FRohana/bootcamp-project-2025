@@ -16,10 +16,17 @@ const connectDB = async () => {
     );
   }
   
+  // Check if already connected
+  if (mongoose.connection.readyState === 1) {
+    return mongoose;
+  }
+  
   if (!connection) {
     connection = await mongoose.connect(url);
     return connection;
   }
+  
+  return connection;
 };
 
 export default connectDB;

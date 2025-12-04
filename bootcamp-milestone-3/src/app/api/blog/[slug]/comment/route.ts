@@ -34,11 +34,30 @@ export async function POST(req: NextRequest, { params }: IParams) {
 		console.log('New comment to add:', newComment);
 
 		// Find the blog document (don't use .lean() so we can modify and save it)
-		const blog = await Blog.findOne({ slug }).orFail();
+		const blog = await Blog.findOne({ slug });
+		if (!blog) {
+			console.log('Blog not found for slug:', slug);
+			return NextResponse.json(
+				{ error: 'Blog post not found' },
+				{ status: 404 }
+			);
+		}
 		console.log('Blog found:', blog.title);
 		console.log('Current comments:', blog.comments);
+		console.log('Comments type:', typeof blog.comments);
 		
-		// Initialize comments array if it doesn't exist
+		// Handle comments if it's stored as a string (JSON string) instead of an array
+		if (typeof blog.comments === 'string') {
+			console.log('Comments is a string, parsing JSON...');
+			try {
+				blog.comments = JSON.parse(blog.comments);
+			} catch (parseError) {
+				console.error('Error parsing comments JSON:', parseError);
+				blog.comments = [];
+			}
+		}
+		
+		// Initialize comments array if it doesn't exist or isn't an array
 		if (!blog.comments || !Array.isArray(blog.comments)) {
 			console.log('Initializing comments array');
 			blog.comments = [];
