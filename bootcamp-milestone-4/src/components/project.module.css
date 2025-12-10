@@ -1,138 +1,157 @@
-.projectWrapper {
-  display: flex;
-  gap: 30px;
+/* Modern Professional Portfolio Layout */
+.projectCard {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto 30px auto;
-  align-items: flex-start;
-}
-
-.project {
-  background: rgba(15, 32, 39, 0.9);
+  max-width: 1100px;
+  background: linear-gradient(135deg, rgba(15, 32, 39, 0.98) 0%, rgba(20, 40, 50, 0.95) 100%);
   border: 2px solid #00ffea;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 255, 234, 0.2);
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  padding: 25px;
-  flex: 1;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 255, 234, 0.15), inset 0 0 30px rgba(0, 255, 234, 0.05);
+  position: relative;
 }
 
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 35px rgba(0, 255, 234, 0.35);
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 234, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 114, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.projectCard:hover {
   border-color: #fff;
+  box-shadow: 0 6px 30px rgba(0, 255, 234, 0.3), inset 0 0 40px rgba(0, 255, 234, 0.08);
+  transform: translateY(-2px);
 }
 
-.project > a {
+.projectContent {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.imageLink {
   flex-shrink: 0;
-  align-self: flex-start;
+  display: block;
 }
 
 .projectImage {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 12px;
-  border: 3px solid #00ffea;
-  box-shadow: 0 4px 16px #00ffea44;
-  background: #232526;
-  transition: transform 0.3s;
+  border-radius: 8px;
+  border: 2px solid #00ffea;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 255, 234, 0.2);
 }
 
-.projectImage:hover {
-  transform: scale(1.05);
+.imageLink:hover .projectImage {
+  transform: scale(1.03);
+  border-color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 255, 234, 0.4);
 }
 
-.projectDetails {
+.projectInfo {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  justify-content: flex-start;
+  gap: 14px;
+  justify-content: space-between;
+  min-height: 220px;
 }
 
 .projectName {
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #00ffea;
-  margin: 0;
+  margin: 0 0 4px 0;
   font-family: "Orbitron", monospace;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(0, 255, 234, 0.3);
 }
 
 .projectDescription {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #e0eafc;
   margin: 0;
   line-height: 1.7;
   font-family: "Share Tech Mono", monospace;
 }
 
+.projectActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
 .projectLink {
   display: inline-block;
   color: #232526;
   background: linear-gradient(90deg, #00ffea 0%, #0072ff 100%);
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   font-family: "Orbitron", monospace;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 12px rgba(0, 255, 234, 0.3);
-  align-self: flex-start;
-  margin-top: 8px;
 }
 
 .projectLink:hover {
   background: linear-gradient(90deg, #0072ff 0%, #00ffea 100%);
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 18px rgba(0, 255, 234, 0.5);
+  transform: translateY(-1px);
 }
 
-/* Comments Sidebar */
-.commentsSidebar {
-  width: 350px;
-  min-width: 350px;
-  background: rgba(15, 32, 39, 0.9);
-  border: 2px solid #00ffea;
-  border-radius: 16px;
-  padding: 25px;
-  position: sticky;
-  top: 20px;
-  max-height: calc(100vh - 40px);
-  overflow-y: auto;
-  align-self: flex-start;
-}
-
-.commentsTitle {
-  font-family: "Orbitron", monospace;
-  font-size: 1.3rem;
+.commentsToggle {
+  background: transparent;
+  border: 1px solid rgba(0, 255, 234, 0.4);
   color: #00ffea;
-  margin: 0 0 20px 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #00ffea;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.commentsToggle:hover {
+  background: rgba(0, 255, 234, 0.1);
+  border-color: rgba(0, 255, 234, 0.6);
+}
+
+/* Comments Section */
+.commentsSection {
+  border-top: 1px solid rgba(0, 255, 234, 0.2);
+  padding: 20px 24px;
+  background: linear-gradient(180deg, rgba(15, 32, 39, 0.6) 0%, rgba(20, 40, 50, 0.5) 100%);
+  position: relative;
+  z-index: 1;
 }
 
 .commentsList {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
-  max-height: 400px;
+  gap: 12px;
+  margin-bottom: 16px;
+  max-height: 300px;
   overflow-y: auto;
-  padding-right: 5px;
+  padding-right: 8px;
 }
 
 .commentsList::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .commentsList::-webkit-scrollbar-track {
@@ -151,29 +170,33 @@
 
 .noComments {
   font-family: "Share Tech Mono", monospace;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #b2ebf2;
   font-style: italic;
   text-align: center;
   padding: 20px 0;
 }
 
-@media (max-width: 1200px) {
-  .projectWrapper {
+/* Responsive */
+@media (max-width: 768px) {
+  .projectContent {
     flex-direction: column;
+    gap: 16px;
   }
 
-  .commentsSidebar {
+  .projectImage {
     width: 100%;
-    min-width: auto;
-    position: relative;
-    max-height: none;
+    height: 200px;
   }
-}
 
-@media (max-width: 900px) {
-  .project {
+  .projectActions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .projectLink,
+  .commentsToggle {
+    width: 100%;
+    text-align: center;
   }
 }
