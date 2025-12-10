@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import Comment from "@/components/Comment";
 import CommentForm from "@/components/CommentForm";
+import connectDB from "@/database/db";
+import Blog from "@/database/blogSchema";
+
+// Force dynamic rendering since we're fetching from database
+export const dynamic = "force-dynamic";
 
 type Props = {
   params: Promise<{
@@ -32,22 +37,35 @@ type BlogPost = {
 
 async function getBlog(slug: string): Promise<BlogPost | null> {
   try {
-    // This fetches the blog from an api endpoint that would GET the blog
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
-      cache: "no-store",
-    });
+    await connectDB();
+    const blog = await Blog.findOne({ slug }).lean();
 
-    // This checks that the GET request was successful
-    if (!res.ok) {
-      throw new Error("Failed to fetch blog");
+    if (!blog) {
+      return null;
     }
 
-    return res.json();
+    // Handle comments if it's stored as a string (JSON string) instead of an array
+    let comments = blog.comments;
+    if (comments && typeof comments === "string") {
+      try {
+        comments = JSON.parse(comments);
+      } catch (parseError) {
+        console.error("Error parsing comments JSON:", parseError);
+        comments = [];
+      }
+    }
+
+    // Ensure comments is an array
+    if (!comments || !Array.isArray(comments)) {
+      comments = [];
+    }
+
+    return {
+      ...blog,
+      comments,
+    } as BlogPost;
   } catch (err: unknown) {
-    console.log(`error: ${err}`);
-    // are a special way of allowing JS inside a string
-    // Instead of "error: " + err, we can just do the above
-    // it is simular to formated strings in python --> f"{err}"
+    console.error(`Error fetching blog: ${err}`);
     return null;
   }
 }
