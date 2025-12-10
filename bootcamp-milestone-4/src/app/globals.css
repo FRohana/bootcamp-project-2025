@@ -582,6 +582,50 @@ main .blog-post-container > img:not(.image-row img) {
   cursor: not-allowed;
 }
 
+/* Project Comments Section */
+.project-comments-section {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 2px solid #00ffea;
+}
+
+.project-comments-title {
+  font-family: "Orbitron", monospace;
+  font-size: 1rem;
+  color: #00ffea;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.project-comments-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-comments-list::-webkit-scrollbar-track {
+  background: rgba(15, 32, 39, 0.5);
+  border-radius: 10px;
+}
+
+.project-comments-list::-webkit-scrollbar-thumb {
+  background: #00ffea;
+  border-radius: 10px;
+}
+
+.project-comments-list::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
 .comment-message {
   font-family: "Share Tech Mono", monospace;
   font-size: 0.85rem;
