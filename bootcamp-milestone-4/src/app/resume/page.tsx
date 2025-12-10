@@ -33,86 +33,37 @@ export default function Resume() {
           <Entry
             title="Founder, San Jose Curbs"
             info="Aug 2019 – May 2023"
-            description={
-              <>
-                - Founded curb painting business serving 600+ customers,
-                generating ≈$12k revenue.
-                <br />
-                - Developed online shop with Wix, engineered custom stencils
-                using AutoCAD, 3D printer, and laser cutter.
-                <br />- Gained sales communication, team leadership, and
-                engineering problem-solving skills.
-              </>
-            }
+            description="- Founded curb painting business serving 600+ customers, generating ≈$12k revenue. - Developed online shop with Wix, engineered custom stencils using AutoCAD, 3D printer, and laser cutter. - Gained sales communication, team leadership, and engineering problem-solving skills."
           />
           <Entry
             title="Co-President, Bellarmine Cash Club"
             info="Aug 2022 – May 2024"
-            description={
-              <>
-                - Created finance curriculum
-                <br />
-                - Presented on investments and financial literacy
-                <br />- Organized trading challenges using Investopedia
-              </>
-            }
+            description="- Created finance curriculum - Presented on investments and financial literacy - Organized trading challenges using Investopedia"
           />
           <Entry
             title="Co-President, Bellarmine Film Club"
             info="Aug 2023 – May 2025"
-            description={
-              <>
-                - Led weekly film screenings
-                <br />- Guided discussions analyzing films with members
-              </>
-            }
+            description="- Led weekly film screenings - Guided discussions analyzing films with members"
           />
           <Entry
             title="Executive, Unity Council"
             info="Aug 2023 – May 2024"
-            description={
-              <>
-                - Helped organize DEI assemblies
-                <br />
-                - Coordinated multicultural events including Global Village
-                <br />- Assisted in school-wide presentations
-              </>
-            }
+            description="- Helped organize DEI assemblies - Coordinated multicultural events including Global Village - Assisted in school-wide presentations"
           />
           <Entry
             title="Team Captain, Liverpool FC"
             info="Winter 2018 – Winter 2022"
-            description={
-              <>
-                - Played competitive soccer as starting midfielder/left wing and
-                captain
-                <br />- Led team communications
-              </>
-            }
+            description="- Played competitive soccer as starting midfielder/left wing and captain - Led team communications"
           />
           <Entry
             title="Assistant Instructor, Victory Martial Arts"
             info="2019 – 2020, 2022 – 2023"
-            description={
-              <>
-                - Instructed classes of 10–20 students
-                <br />
-                - Led workshops
-                <br />- Improved teaching and leadership skills
-              </>
-            }
+            description="- Instructed classes of 10–20 students - Led workshops - Improved teaching and leadership skills"
           />
           <Entry
             title="Engineer, Bellarmine Makers Lab"
             info="Aug 2021 – May 2025"
-            description={
-              <>
-                - Developed 3D models and prints
-                <br />
-                - Learned AutoCAD, laser cutting
-                <br />- Applied skills to curb painting business
-              </>
-            }
+            description="- Developed 3D models and prints - Learned AutoCAD, laser cutting - Applied skills to curb painting business"
           />
         </section>
 
@@ -121,52 +72,20 @@ export default function Resume() {
           <h2 className="section-title">Projects</h2>
           <Entry
             title="Whack-A-Mole Arcade Game"
-            description={
-              <>
-                - Built arcade game with AutoCAD, 3D printing, and Arduino
-                programming
-                <br />
-                - Designed electrical systems
-                <br />- Soldered circuits
-              </>
-            }
+            description="- Built arcade game with AutoCAD, 3D printing, and Arduino programming - Designed electrical systems - Soldered circuits"
           />
           <Entry
             title="PyPaint"
-            description={
-              <>
-                - Coded a digital painting app in Python with Pygame
-                <br />- Features palette, brush sizes, reset canvas, and
-                intuitive drawing
-              </>
-            }
+            description="- Coded a digital painting app in Python with Pygame - Features palette, brush sizes, reset canvas, and intuitive drawing"
           />
           <Entry
             title="Co-founder, CPUandBeyond"
-            description={
-              <>
-                - Designed website and course explaining computer hardware
-                concepts (CPUs, hard drives, power supplies) with quizzes
-                <br />-{" "}
-                <a
-                  href="https://faridrohana0.wixsite.com/cpuandbeyond"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Website
-                </a>
-              </>
-            }
+            description="- Designed website and course explaining computer hardware concepts (CPUs, hard drives, power supplies) with quizzes - View Website: https://faridrohana0.wixsite.com/cpuandbeyond"
           />
           <Entry
             title="Personal Website"
             info="2025"
-            description={
-              <>
-                - Created this personal portfolio website
-                <br />- Showcases my work and experience
-              </>
-            }
+            description="- Created this personal portfolio website - Showcases my work and experience"
           />
         </section>
 
