@@ -9,7 +9,14 @@ type CommentProps = {
 };
 
 function parseCommentTime(time: Date | string) {
+  if (!time) return "Invalid date";
+  
   const date = typeof time === "string" ? new Date(time) : new Date(time);
+  
+  // Check if date is valid
+  if (isNaN(date.getTime())) {
+    return "Invalid date";
+  }
 
   // Get month name
   const months = [
@@ -46,11 +53,25 @@ function parseCommentTime(time: Date | string) {
 }
 
 function Comment({ comment }: CommentProps) {
+  // Validate comment data
+  if (!comment || typeof comment !== "object") {
+    return null;
+  }
+  
+  const user = comment.user || "Anonymous";
+  const commentText = comment.comment || "";
+  const time = comment.time || new Date();
+
+  // Don't render if comment is empty
+  if (!commentText.trim()) {
+    return null;
+  }
+
   return (
     <div className="comment-container">
-      <h4 className="comment-user">{comment.user}</h4>
-      <p className="comment-text">{comment.comment}</p>
-      <span className="comment-time">{parseCommentTime(comment.time)}</span>
+      <h4 className="comment-user">{user}</h4>
+      <p className="comment-text">{commentText}</p>
+      <span className="comment-time">{parseCommentTime(time)}</span>
     </div>
   );
 }

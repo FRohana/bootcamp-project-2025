@@ -195,6 +195,68 @@ form#contact-form textarea {
   resize: vertical;
 }
 
+form#contact-form input.error,
+form#contact-form textarea.error {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+}
+
+form#contact-form .error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  font-family: "Share Tech Mono", monospace;
+  display: block;
+}
+
+form#contact-form .form-message {
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+form#contact-form .form-message.success {
+  background: rgba(0, 255, 234, 0.2);
+  color: #00ffea;
+  border: 2px solid #00ffea;
+}
+
+form#contact-form .form-message.error {
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+form#contact-form .submit-button {
+  background: linear-gradient(90deg, #00ffea 0%, #0072ff 100%);
+  color: #232526;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Orbitron", monospace;
+  font-size: 1.1rem;
+  padding: 14px 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+form#contact-form .submit-button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #0072ff 0%, #00ffea 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 234, 0.3);
+}
+
+form#contact-form .submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 form#contact-form input:focus,
 form#contact-form textarea:focus {
   border-color: #fff;
@@ -580,50 +642,6 @@ main .blog-post-container > img:not(.image-row img) {
 .comment-submit-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-/* Project Comments Section */
-.project-comments-section {
-  margin-top: 25px;
-  padding-top: 25px;
-  border-top: 2px solid #00ffea;
-}
-
-.project-comments-title {
-  font-family: "Orbitron", monospace;
-  font-size: 1rem;
-  color: #00ffea;
-  margin: 0 0 15px 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.project-comments-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-  max-height: 300px;
-  overflow-y: auto;
-  padding-right: 5px;
-}
-
-.project-comments-list::-webkit-scrollbar {
-  width: 6px;
-}
-
-.project-comments-list::-webkit-scrollbar-track {
-  background: rgba(15, 32, 39, 0.5);
-  border-radius: 10px;
-}
-
-.project-comments-list::-webkit-scrollbar-thumb {
-  background: #00ffea;
-  border-radius: 10px;
-}
-
-.project-comments-list::-webkit-scrollbar-thumb:hover {
-  background: #fff;
 }
 
 .comment-message {

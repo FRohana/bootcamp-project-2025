@@ -36,6 +36,15 @@ async function getProjects(): Promise<ProjectData[] | null> {
       if (!project.comments || !Array.isArray(project.comments)) {
         project.comments = [];
       }
+      // Filter out invalid comments (empty strings, null, undefined, or missing required fields)
+      project.comments = project.comments.filter(
+        (comment: any) =>
+          comment &&
+          typeof comment === "object" &&
+          comment.comment &&
+          typeof comment.comment === "string" &&
+          comment.comment.trim().length > 0
+      );
       return project;
     });
     
@@ -58,7 +67,7 @@ export default async function Portfolio() {
   }
 
   return (
-    <main>
+    <main style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
       <h1 className="page-title">My Portfolio</h1>
 
       {projects.map((project, index) => (

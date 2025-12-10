@@ -3,7 +3,7 @@
   gap: 30px;
   width: 100%;
   max-width: 1400px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto;
   align-items: flex-start;
 }
 
@@ -14,8 +14,8 @@
   box-shadow: 0 4px 24px rgba(0, 255, 234, 0.2);
   display: flex;
   gap: 30px;
-  align-items: center;
-  padding: 30px;
+  align-items: flex-start;
+  padding: 25px;
   flex: 1;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -28,6 +28,7 @@
 
 .project > a {
   flex-shrink: 0;
+  align-self: flex-start;
 }
 
 .projectImage {
@@ -50,6 +51,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  justify-content: flex-start;
 }
 
 .projectName {
@@ -92,10 +94,86 @@
   box-shadow: 0 5px 18px rgba(0, 255, 234, 0.5);
 }
 
+/* Comments Sidebar */
+.commentsSidebar {
+  width: 350px;
+  min-width: 350px;
+  background: rgba(15, 32, 39, 0.9);
+  border: 2px solid #00ffea;
+  border-radius: 16px;
+  padding: 25px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  align-self: flex-start;
+}
+
+.commentsTitle {
+  font-family: "Orbitron", monospace;
+  font-size: 1.3rem;
+  color: #00ffea;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #00ffea;
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.commentsList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.commentsList::-webkit-scrollbar-track {
+  background: rgba(15, 32, 39, 0.5);
+  border-radius: 10px;
+}
+
+.commentsList::-webkit-scrollbar-thumb {
+  background: #00ffea;
+  border-radius: 10px;
+}
+
+.commentsList::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+.noComments {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.95rem;
+  color: #b2ebf2;
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+}
+
+@media (max-width: 1200px) {
+  .projectWrapper {
+    flex-direction: column;
+  }
+
+  .commentsSidebar {
+    width: 100%;
+    min-width: auto;
+    position: relative;
+    max-height: none;
+  }
+}
+
 @media (max-width: 900px) {
   .project {
     flex-direction: column;
     align-items: flex-start;
-    max-width: 98vw;
   }
 }
