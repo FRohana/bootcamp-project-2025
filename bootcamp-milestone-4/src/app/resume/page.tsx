@@ -93,6 +93,13 @@ export default function Resume() {
         <section className="section">
           <h2 className="section-title">Skills</h2>
           <ul className="skill-list">
+            <li>React.js</li>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>Tailwind CSS</li>
+            <li>MongoDB</li>
+            <li>GitHub</li>
             <li>Python</li>
             <li>Java</li>
             <li>HTML/CSS</li>

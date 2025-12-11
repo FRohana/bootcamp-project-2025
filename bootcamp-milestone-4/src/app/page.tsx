@@ -31,13 +31,12 @@ export default function Home() {
         <div className="infocards">
           <Infocard
             title="Current Focus"
-            content="Learning Python, HTML, and CSS. Building my web development skills
-            through hands-on projects like this website."
+            content="Building full-stack web applications with React.js, Next.js, TypeScript, and MongoDB. Developing modern, responsive websites with Tailwind CSS and deploying projects using GitHub."
           />
 
           <Infocard
             title="Technologies"
-            content="Python • Java • Arduino • AutoCAD"
+            content="React.js • Next.js • TypeScript • JavaScript • Tailwind CSS • MongoDB • GitHub • Python • Java • Arduino • AutoCAD"
           />
 
           <Infocard
